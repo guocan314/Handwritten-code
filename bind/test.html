@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // //this的作用域
+    // var name = '张三',
+    //   age = 18
+    // var obj = {
+    //   name: '李四',
+    //   show: this.age,
+    //   myfun: function () {
+    //     console.log(this.name + '年龄' + this.age)
+    //   }
+    // }
+    // console.log(obj.show)
+    // obj.myfun()
+
+
+
+    //call()、 apply()、 bind() 都是用来重定义this這个对象的
+    // var name = '张三',
+    //   age = 18
+    // var obj = {
+    //   name: '李四',
+    //   show: this.age,
+    //   myfun: function () {
+    //     console.log(this.name + '年龄' + this.age + '来自' + a + "去往" + b)
+    //   }
+    // }
+    // var db = {
+    //   name:'王五',
+    //   age: 30
+    // }
+
+
+    // obj.myfun()
+    // obj.myfun.call()
+    // obj.myfun.call(db)
+    // obj.myfun.apply(db)
+    // obj.myfun.bind(db)() //bind返回一个新function，必须调用才能执行
+
+    //     call、 bind、 apply 这三个函数的第一个参数都是this的指向对象，第二个参数差别就来了：
+    //     call 的参数是直接放进去的，第二第三第n个参数全都用逗号分隔，直接放到后面obj.myFun.call(db,'江西', ..., 'string')。
+    //     apply的所有参数都必须放在一个数组里面传进去。
+    //     bind除了返回函数以外，它的参数和call 一样。
+    var name = '张三',
+      age = 18
+    var obj = {
+      name: '李四',
+      show: this.age,
+      myfun: function (a,b) {
+        console.log(this.name + '年龄' + this.age + '来自' + a + "去往" + b)
+      }
+    }
+    var db = {
+      name: '王五',
+      age: 30
+    }
+
+    obj.myfun.call(db,'河南','北京')
+    obj.myfun.apply(db,['河南','北京'])
+    obj.myfun.bind(db,'河南','北京')()
+  </script>
+
+</body>
+
+</html>

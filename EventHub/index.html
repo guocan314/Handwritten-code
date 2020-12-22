@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub</title>
+</head>
+<body>
+  <script>
+    class EventHub {
+      eventBus = {}
+      on(eventName,fn) {
+        this.eventBus[eventName] = this.eventBus[eventName] || []
+        this.eventBus[eventName].push(fn)
+      }
+      emit(eventName) {
+        if (this.eventBus[eventName] === undefined) return
+        this.eventBus[eventName].forEach(fn => fn())
+      }
+      off(eventName,fn) {
+        const i = indexOf(this.eventBus[eventName],fn)
+        if(i === -1) return
+        this.eventBus[eventName].splice(i,1)
+
+      }
+
+    }
+    function indexOf(arr,t) {
+      let index = -1;
+      if (arr === undefined) return index;
+      for (let i=0;i<arr.length;i++) {
+        if(arr[i] === t) {
+          index = i;
+          break;
+        }
+      }
+      return index
+    }
+
+    let fn1 = function(){
+      console.log('方法1')
+    }
+    let fn2 = function(){
+      console.log('方法2')
+    }
+    let fn3 = function(){
+      console.log('方法3')
+    }
+    
+    let EVENTS = new EventHub()
+    EVENTS.on('a',fn1)
+    EVENTS.on('a',fn2)
+    EVENTS.emit('a')
+    EVENTS.off('a',fn1)
+    EVENTS.emit('a')
+
+  </script>
+  
+</body>
+</html>
