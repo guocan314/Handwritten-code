@@ -1,0 +1,19 @@
+{
+  "name": "handwritten-code",
+  "version": "1.0.0",
+  "description": "目标 1、手写 bind 2、手写深拷贝 3、手写 EventHub（发布-订阅） 4、手写 Promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guocan314/Handwritten-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guocan314/Handwritten-code/issues"
+  },
+  "homepage": "https://github.com/guocan314/Handwritten-code#readme"
+}

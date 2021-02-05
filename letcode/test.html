@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+ var reverse = function(x) {
+  if (x<0) return false;
+    let a = x+'';
+    let res = '';
+    const len = a.length-1;
+    for (let i = 0;i<a.length;i++) {
+        res += a[a-i]
+    }
+    let y ;
+    y = parseInt(res) == x ? true : false;
+    return y
+
+};
+reverse(121)
+  </script>
+</body>
+</html>
